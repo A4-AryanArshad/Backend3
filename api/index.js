@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use(cors());
 
 
-mongoose.connect('mongodb+srv://zainmanzoor2003:shadi123@cluster0.umdfd.mongodb.net/', {
+mongoose.connect('mongodb+srv://zainmanzoor2003:react-native-first-app123@react-native-first-app.d3vxvgp.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
