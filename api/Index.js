@@ -10,6 +10,14 @@ const app = express();
 let isDbConnected = false;
 
 // MongoDB Connection
+
+
+// Middlewares
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(cors());
+
+
 mongoose.connect('mongodb+srv://nihaarshad5:r6eH4cYY4ZdOprgl@cluster0.o8bu9nt.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -20,20 +28,11 @@ mongoose.connect('mongodb+srv://nihaarshad5:r6eH4cYY4ZdOprgl@cluster0.o8bu9nt.mo
 })
 .catch(err => {
   console.error("MongoDB connection error:", err.message);
-});
-
-// Middlewares
-app.use(bodyParser.json());
-app.use(cookieParser());
-app.use(cors());
+});  
 
 // Root route to check DB status
 app.get('/', (req, res) => {
-  if (isDbConnected) {
-    res.send('MongoDB connected');
-  } else {
-    res.send('MongoDB not connected');
-  }
+ res.send("Hello")
 });
 
 // Routes
