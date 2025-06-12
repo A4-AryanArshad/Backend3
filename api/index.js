@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use(cors());
 
 
-mongoose.connect('mongodb+srv://nihaarshad5:r6eH4cYY4ZdOprgl@cluster0.o8bu9nt.mongodb.net/', {
+mongoose.connect('mongodb+srv://zainmanzoor2003:shadi123@cluster0.umdfd.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
