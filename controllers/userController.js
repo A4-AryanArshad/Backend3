@@ -28,6 +28,8 @@ exports.loginUser = async (req, res) => {
     // Generate a basic session cookie
     res.cookie('userSession', user._id.toString(), {
       httpOnly: true,
+      secure: true,
+        sameSite: 'None',
       maxAge: 24 * 60 * 60 * 1000 // 1 day
     });
 
