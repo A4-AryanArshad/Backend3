@@ -15,10 +15,13 @@ let isDbConnected = false;
 // Middlewares
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(cors());
 
 
 
+app.use(cors({
+  origin: 'https://fvg-global-assist.webflow.io', // ✅ Replace this with your actual Webflow domain
+  credentials: true
+}));
 mongoose.connect('mongodb+srv://nihaarshad5:r6eH4cYY4ZdOprgl@cluster0.o8bu9nt.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
