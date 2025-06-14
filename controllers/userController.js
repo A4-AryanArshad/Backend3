@@ -41,16 +41,12 @@ exports.loginUser = async (req, res) => {
   }
 };
 
+
 exports.logoutUser = (req, res) => {
-  try {
-    res.clearCookie('userSession', {
-      httpOnly: true,
-      secure: true, // true if using HTTPS
-      sameSite: 'Lax'
-    });
-    return res.status(200).json({ message: 'Logged out successfully' });
-  } catch (err) {
-    console.error('Logout error:', err);
-    return res.status(500).json({ message: 'Logout failed' });
-  }
+  res.clearCookie('token', {
+    httpOnly: true,
+    secure: true, // make sure to match cookie settings
+    sameSite: 'None'
+  });
+  res.status(200).json({ message: 'Logged out successfully' });
 };
