@@ -42,11 +42,13 @@ exports.loginUser = async (req, res) => {
 };
 
 
+// ✅ FIXED: Logout Controller
 exports.logoutUser = (req, res) => {
-  res.clearCookie('token', {
+  res.clearCookie('userSession', {
     httpOnly: true,
-    secure: true, // make sure to match cookie settings
-    sameSite: 'None'
+    secure: true,      // must match the same settings as in login
+    sameSite: 'None'   // must match as well
   });
   res.status(200).json({ message: 'Logged out successfully' });
 };
+
