@@ -21,6 +21,14 @@ const applicationSchema = new mongoose.Schema({
   photoSquare: String,
   photoPortrait: String,
   portfolios: [portfolioSchema],
+  applicantId: {
+    type: String, // You can also use mongoose.Schema.Types.ObjectId if referencing another model
+    required: true
+  },
+  status: {
+    type: Boolean,
+    default: false
+  },
   submittedAt: {
     type: Date,
     default: Date.now
