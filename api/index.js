@@ -22,7 +22,7 @@ app.use(cors({
    origin: true, // ✅ Replace this with your actual Webflow domain
   credentials: true
 }));
-mongoose.connect('mongodb+srv://zainmanzoor2003:react-native-first-app123@react-native-first-app.d3vxvgp.mongodb.net/', {
+mongoose.connect('mongodb+srv://nihaarshad5:r6eH4cYY4ZdOprgl@cluster0.o8bu9nt.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
