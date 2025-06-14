@@ -28,13 +28,16 @@ exports.loginUser = async (req, res) => {
     // Generate a basic session cookie
     res.cookie('userSession', user._id.toString(), {
       httpOnly: true,
-      secure: true,
-        sameSite: 'None',
+    
+      sameSite: 'None',
+ 
       maxAge: 24 * 60 * 60 * 1000 // 1 day
     });
-
-    res.status(200).json({ message: "Login successful" });
+    const applicantId = req.cookies.userSession;
+    console.log(applicantId);
+    res.status(200).json({ message: "Login successful", userId: user._id });
   } catch (err) {
-    res.status(500).json({ message: "Server errorbbbb", error: err.message });
+    res.status(500).json({ message: "Server error", error: err.message });
   }
 };
+
